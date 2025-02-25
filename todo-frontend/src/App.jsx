@@ -1,4 +1,5 @@
-import { useState} from "react";
+import { useState,useEffect} from "react";
+import axios from "axios";
 import "./styles.css";
 import todoLogo from "./assets/todo-logo.png";
 const API_URL = "http://localhost:5000/api/todos";
@@ -6,6 +7,12 @@ const API_URL = "http://localhost:5000/api/todos";
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [taskText, setTaskText] = useState("");
+
+  useEffect(()=>{
+    axios.get(API_URL)
+      .then((response)=>setTasks(response.data))
+      .then((error)=>console.log(error));
+  },[]);
 
   const addTask = () => {
     if (!taskText.trim()) return;

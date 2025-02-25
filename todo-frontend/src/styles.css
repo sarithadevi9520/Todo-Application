@@ -1,46 +1,15 @@
-/* Fix Task Name Visibility */
-.task-item, .completed {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #fff;
-  padding: 12px;
-  margin: 6px 0;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: relative;  /* Ensure text stays above buttons */
-}
-
-.task-item span {
-  flex: 1;
-  font-size: 16px;
-  color: #333;
-  text-align: left;
-  margin-right: 10px; /* Create space between text & buttons */
-}
-
-.completed span {
-  text-decoration: line-through;
-  opacity: 0.7;
-}
-
-/* Ensure buttons stay aligned and don't overlap text */
-button {
-  padding: 8px;
-  margin-left: 5px;
-}
-/* Center the app in the middle of the screen */
+/* Center everything */
 body {
   font-family: Arial, sans-serif;
   background: #f4f4f4;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full height */
+  height: 100vh;
   margin: 0;
 }
 
-/* Ensure container is properly aligned */
+/* Main container */
 .container {
   background: white;
   padding: 20px;
@@ -48,14 +17,94 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 400px;
   text-align: center;
-  position: relative; /* Needed for absolute positioning */
-}
-/* Logo Styling */
-.logo {
-  width: 80px;  /* Adjust size */
-  /*margin-bottom: 1px; /* Space below logo */
 }
 
+/* Logo */
+.logo {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+/* Input and button */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-btn {
+  /*padding: 8px 12px;
+  border: none;
+  background: green;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer; */
+  padding: 8px;
+  margin-left: 5px;
+}
+
+.add-btn:hover {
+  background: darkgreen;
+}
+
+/* Task list */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.task-item span {
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Buttons */
+.edit-btn {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 6px 8px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 6px 8px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: darkorange;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+}
 .title {
   color: black;  
   font-size: 24px;
